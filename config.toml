@@ -1,0 +1,4 @@
+baseURL = 'http://warrentestca9.com/'
+languageCode = 'en-us'
+title = 'Warrens Hugo Site'
+theme = 'ananke'
