@@ -1,4 +1,4 @@
-baseURL = 'http://warrentestca9.com/'
+baseURL = 'https://warrenagee.github.io/quickstart/'
 languageCode = 'en-us'
 title = 'Warrens Hugo Site'
 theme = 'ananke'
