@@ -7,7 +7,7 @@ theme = 'ananke'
 
   [[deployment.targets]]
     name = "warren-hugo-test"
-    URL = "http://warren-hugo-test.s3-website-us-west-2.amazonaws.com"
+    URL = "s3://warren-hugo-test?region=us-west-2"
 
     # If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
     cloudFrontDistributionID =	"EQZP2Q58OHZJ3"
