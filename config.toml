@@ -1,19 +1,9 @@
 baseURL = 'https://warrenagee.github.io/'
-buildDrafts = false
-contentDir = "content"
 languageCode = 'en-us'
-layoutDir = "layouts"
-publishDir = "public"
-enableGitInfo = true
 title = 'Warrens Hugo Site'
 theme = 'ananke'
-
 # Deployment details
-
 [deployment]
-order = [".jpg$", ".gif$"]
-disableKinds = ["sitemap"]
-disablePathToLower = false
 
   [[deployment.targets]]
     name = "warren-hugo-test"
@@ -31,12 +21,3 @@ disablePathToLower = false
   [[deployment.matchers]]
     pattern = "^.+\\.(html|xml|json)$"
     gzip = true
-
-[outputFormats]
-  [outputFormats.html]
-    isPlainText = true
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
