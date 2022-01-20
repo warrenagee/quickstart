@@ -1,23 +1,70 @@
-baseURL = 'https://warrenagee.github.io/'
-languageCode = 'en-us'
-title = 'Warrens Hugo Site'
+baseURL = "https://warrenagee.github.io/"
+buildDrafts = false
+contentDir = "content"
+languageCode = "en-us"
+layoutDir = "layouts"
+publishDir = "public"
+enableGitInfo = true
+title = "Warren's Experimental Site"
 
-# Deployment details
 [deployment]
 
-  [[deployment.targets]]
-    name = "warren-hugo-test"
-    URL = "s3://warren-hugo-test?region=us-west-2"
+				# By default, files are uploaded in an arbitrary order.
+				# Files that match the regular expressions in the "Order" list
+				# will be uploaded first, in the listed order
+order = [".jpg$", ".gif$"]
+disableKinds = ["sitemap"]
+disablePathToLower = false
 
-    # If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
-    cloudFrontDistributionID =	"EQZP2Q58OHZJ3"
 
-  [[deployment.matchers]]
-    # Cache static assets for 20 years.
-    pattern = "^.+\\.(js|css|png|jpg|gif|svg|ttf)$"
-    cacheControl = "max-age=630720000, no-transform, public"
-    gzip = true
+[[deployment.targets]]
+				# An arbitrary name for this target.
+name = "warren-hugo-test"
+				# The Go Cloud Development Kit URL to deploy to. Examples:
+				# GCS; see https://gocloud.dev/howto/blob/#gcs
+				# URL = "gs://<Bucket Name>"
+				# S3; see https://gocloud.dev/howto/blob/#s3
+				# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
 
-  [[deployment.matchers]]
-    pattern = "^.+\\.(html|xml|json)$"
-    gzip = true
+
+URL = "s3://warren-hugo-test?region=us-west-2"
+
+
+				# Azure Blob Storage; see https://gocloud.dev/howto/blob/#azure
+				# URL = "azblob://$web"
+				
+				# You can use a "prefix=" query parameter to target a subfolder of the bucket:
+				# URL = "gs://<Bucket Name>?prefix=a/subfolder/"
+
+				# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+
+				#cloudFrontDistributionID = ""
+		
+				# ... add more [[deployment.targets]] sections ...
+				
+				# [[deployment.matchers]] configure behavior for files that match the Pattern.
+				# Samples:
+
+
+[[deployment.matchers]]
+#  Cache static assets for 1 year.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+
+[outputFormats]
+  [outputFormats.html]
+    isPlainText = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+ 
