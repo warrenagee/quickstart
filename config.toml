@@ -1,4 +1,5 @@
 baseURL = "https://warrenagee.github.io/"
+theme = "ananke"
 buildDrafts = false
 contentDir = "content"
 languageCode = "en-us"
