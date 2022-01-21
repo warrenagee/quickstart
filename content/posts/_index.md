@@ -1,5 +1,7 @@
 ---
-title: My Go Journey
-date: 2017-03-23
-publishdate: 2017-03-24
+title: My Hugo Journey
+date: 2022-01-20
+publishdate: 2022-01-20
 ---
+
+This is a log of my hugo journey. Come with me!
