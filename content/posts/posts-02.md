@@ -1,5 +1,5 @@
 ---
-title = "Post 02"
+title: "Post 02"
 date: 2022-01-20
 publishdate: 2022-01-20
 ---
